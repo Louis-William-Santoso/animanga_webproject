@@ -1,0 +1,42 @@
+
+/*navbar style*/
+.navbar {
+    text-align: justify;
+    text-orientation: upright;
+}
+
+.navbar ul{
+    list-style-type: none;
+    font-size: 30px;
+}
+
+#home {
+    color:#6c6868;
+    padding: 20px;
+} #home img{
+    height: 35px;
+    text-align: justify;
+}
+
+#servis {
+    color:#6c6868;
+    padding: 20px;
+} #servis img{
+    height: 35px;
+    text-align: justify;
+}
+
+#ourproduct {
+    color:#6c6868;
+    padding: 20px;
+} 
+#ourproduct img{
+    height: 35px;
+    text-align: justify;
+}
+
+
+#aboutus {
+    color:#6c6868;
+    padding: 20px;
+}

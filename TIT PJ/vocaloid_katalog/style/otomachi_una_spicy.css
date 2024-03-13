@@ -1,0 +1,52 @@
+*{
+	font-family:"Times New Roman", Times, serif;
+}
+
+/*navbar*/
+.navbar {
+    overflow:hidden;
+    background-color: #333;
+    font-family: Arial, sans-serif;
+
+}
+
+.navbar a {
+	float:left;
+	display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+	text-align:left;
+}
+
+.navbar #bonk {
+	float:right;
+}
+  
+.navbar a:hover {
+	background-color: #ddd;
+    color: black;
+}
+
+/* image style */
+#gambar_produk {
+	margin: 50px;
+}
+
+
+td p {
+	margin-right:100px;
+}
+
+#gambar {
+	overflow:hidden;
+}
+
+/* Shoping cart*/
+.minecart {
+	background-color:#030303;
+}
+
+.minecart td {
+}

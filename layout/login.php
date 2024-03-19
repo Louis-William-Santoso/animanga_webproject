@@ -1,28 +1,31 @@
 <?php
  include "../admin_pages/database.php";
+ 
 
  if ($db -> connect_error){
      echo "database corrupt";
  }
     //var pw & username
     if(isset($_POST['login_button'])){
-        $username = $_POST['Username'];
-        $password = $_POST['Password'];
+        $user_name = $_POST['Username']; 
+        $passcode = $_POST['Password'];
     
     //compare data dari database
         $sql = "SELECT * FROM user_data WHERE 
-        username='$username' AND password='$password'";
+        (email='$user_name'||username='$user_name') AND password='$passcode'";
        
     //link ke homepage
        $hasil = $db->query($sql); 
+
         if($hasil -> num_rows > 0) {
-            header ("location: ../main_homepage.php"); 
-           //link ke halaman admin (* username=> Lord_Gatot || password=> #Lord_gatot_the_emperor_no1) 
-            if($username === 'Lord_Gatot') {
-                header ("location: ../admin_pages/admin.php");} 
+             //link ke halaman admin (* username=> Lord_Gatot || password=> Gatot_ganteng) 
+             if($user_name === 'Lord_Gatot' || 'gatot@gws.com') {
+                header ("location:../admin_pages/admin.php");
+            }else{ 
+                header ("location: ../TIT PJ/new homepage.php"); }
     }// lek datane gak onok :(
         else {
-            echo "data tdk ada";
+            
         }
     } 
     ?>
@@ -104,6 +107,13 @@
         <button class="button" type ="submit" name="login_button"> Login </button>
         <br>You don't have an account, <a href="signin.php">let's make it for you :3</a></br>
     </form> 
-</div></div>
 </body>
+
+<script type="text/javascript">',
+     fungction jsfunction(){
+        alert ('AWOKAWOKAWOK....');
+        alert ('passworde salah');
+        alert ('GOBLOG');
+     }
+     </script>
 </html>

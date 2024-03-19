@@ -1,26 +1,3 @@
-<?php
-    include "../admin_pages/database.php";
-  
-
-    if ($db -> connect_error){
-        echo "database corrupt";
-        die();
-    }
-    //insert var pw & username
-    if (isset($_POST['submit'])){
-        $username = $_POST['Username'];
-        $password = $_POST['Password'];
-        $ConfirmPassword = $_POST['ConfirmPassword'];
-
-        
-        if ($password === $ConfirmPassword){
-            $sql = "INSERT INTO user_data (username, password) VALUES ('$username', '$password')";
-            header ("location: ../admin_pages/main_homepage.php"); 
-        }else{
-            echo "Password doesn't match!!";
-        }
-    }
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,13 +58,46 @@
 
 <body>
     <div id="basabasi">
-    <form method="POST" action="signin.php">
-    <h1>Singin</h1>
+    <form action="signin.php" method="POST">
+    <h1>Sing-in</h1>
         <p id="pp">By loging in or signing up, you are agree with our <a href="">Privacy Policy</a></p>
-        <p><input class="input" type="text" placeholder="Username or Email" name="Username" /></p>
+        <p><input class="input" type="text" placeholder="Username" name="Username" /></p>
+        <p><input class="input" type="text" placeholder="Email" name="Email" /></p>
         <p><input class="input"type="password" placeholder="Password" name="Password"/></p>
         <p><input class="input"type="password" placeholder="Confirm Password" name="ConfirmPassword"/></p>
-        <button class="button" type ="submit" name="submit"> Sing-in </button>
+        <button class="button" type ="submit" name="signup"> Sing-in </button>
     </form> </div>
 </body>
 </html>
+
+<?php
+    include "../admin_pages/database.php";
+    if ($db -> connect_error){
+        echo "database corrupt";
+        die();
+    }
+    //insert var pw & username
+    elseif (isset($_POST['signup'])){
+        $id = NULL;
+        $user_name = $_POST['Username'];
+        $email= $_POST['Email'];
+        $passcode = $_POST['Password'];
+        $ConfirmPassword = $_POST['ConfirmPassword'];
+
+        
+        if ($passcode === $ConfirmPassword){
+            $query = "INSERT INTO `user_data` (`id`, `username`, `password`, `date`, `email`) VALUES (NULL, '$user_name', '$passcode', current_timestamp(), '$email')";
+            //$result = $db -> query($query);
+            //header ("location: ../TIT PJ/new homepage.php"); ILoveJewish
+
+            if ($db->query($query) === FALSE){
+                echo "SQL e BOSOKKKKKKK!!!!";
+            }else{
+                echo "data masok";
+            }
+        }else{
+            echo "Password doesn't match!!";
+        }
+    }
+    die ();
+?>

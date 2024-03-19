@@ -9,6 +9,7 @@
     	<script src="SpryAssets/SpryMenuBar.js" type="text/javascript"></script>
     	<link rel="shortcut icon" href="Random img/kntkt7.jpg"  type="image/x-icon">
     	<link href="SpryAssets/SpryMenuBarHorizontal.css" rel="stylesheet" type="text/css">
+      <?php include "../admin_pages/database.php";?>
     </head>
 
     <body>
@@ -32,7 +33,7 @@
           	<a href="#more_inform">Contact</a>
            	<a href="#nama_klm">About Us</a>
             <img src="Random img/ezgif.com-gif-maker.gif" name="bonk" width="50" id="bonk">
-    </div>
+    </div>-->
    
    
    <!-- <div class="navbar">
@@ -161,6 +162,10 @@ window.onclick = function(event) {
   }
 }
 var MenuBar1 = new Spry.Widget.MenuBar("MenuBar1", {imgDown:"SpryAssets/SpryMenuBarDownHover.gif", imgRight:"SpryAssets/SpryMenuBarRightHover.gif"});
+
+
+// js popup
+  alert ("Tolol :3")
     </script>
     </body>
 </html>
